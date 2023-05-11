@@ -33,4 +33,9 @@ def run_inscriptis():
     url = "https://www.fhgr.ch"
     html = urllib.request.urlopen(url).read().decode('utf-8')
     text = get_text(html)
-    print(text)
+    logging.info(text)
+
+
+
+
+
