@@ -1,4 +1,6 @@
 import logging
+import time
+
 
 import urllib.request
 from inscriptis import get_text
@@ -19,7 +21,8 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         else:
             name = req_body.get('name')
 
-    run_inscriptis()
+    content = run_inscriptis()
+    store_to_database(name, content)
     
     if name:
         return func.HttpResponse(f"Hello {name}!", headers=headers)
@@ -29,8 +32,12 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
              headers=headers, status_code=400
         )
 
-
 def run_inscriptis(url = "http://heise.de"):
     html = urllib.request.urlopen(url).read().decode('utf-8')
     text = get_text(html)
     logging.info(text)
+    return text
+
+def store_to_database(name, content):
+     whatever.set(func.SqlRow({"timestamp": time.time(), "name": name, "content": content}))
+       
