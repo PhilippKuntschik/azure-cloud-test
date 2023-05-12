@@ -10,6 +10,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     headers = {"my-http-header": "some-value"}
 
     name = req.params.get('name')
+    url = req.params.get('url')
     if not name:
         try:
             req_body = req.get_json()
@@ -29,13 +30,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         )
 
 
-def run_inscriptis():
-    url = "https://www.fhgr.ch"
+def run_inscriptis(url = "http://heise.de"):
     html = urllib.request.urlopen(url).read().decode('utf-8')
     text = get_text(html)
     logging.info(text)
-
-
-
-
-
