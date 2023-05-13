@@ -7,7 +7,7 @@ from inscriptis import get_text
 import azure.functions as func
 
 
-def main(req: func.HttpRequest, connect_sql: func.Out[func.SqlRow]) ) -> func.HttpResponse:
+def main(req: func.HttpRequest, connect_sql: func.Out[func.SqlRow]) -> func.HttpResponse:
     headers = {"my-http-header": "some-value"}
 
     name = req.params.get('name')
