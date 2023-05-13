@@ -1,26 +1,19 @@
 {
-    "bindings": [
-      {
-        "authLevel": "function",
-        "type": "httpTrigger",
-        "direction": "in",
-        "name": "req",
-        "methods": [
-          "get",
-          "post"
-        ]
-      },
-      {
-        "type": "http",
-        "direction": "out",
-        "name": "$return"
-      },
-      {
-        "type": "sql",
-        "direction": "out",
-        "name": "connect_sql",
-        "commandText": "dbo.WEB_CONTENT",
-        "connectionStringSetting": "AZURE_SQL_CONNECTION"
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
     }
   ]
 }
