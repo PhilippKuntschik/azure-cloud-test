@@ -38,5 +38,5 @@ def run_inscriptis(url = "http://heise.de"):
     return text
 
 def store_to_database(name, content):
-     whatever.set(func.SqlRow({"timestamp": time.time(), "name": name, "content": content}))
+    connect_sql.set(func.SqlRow({"timestamp": time.time(), "name": name, "content": content}))
        

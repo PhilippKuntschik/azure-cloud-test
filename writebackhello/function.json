@@ -18,9 +18,9 @@
       {
         "type": "sql",
         "direction": "out",
-        "name": "whatever",
-        "commandText": "dbo.testing",
-        "connectionStringSetting": "testing"
+        "name": "connect_sql",
+        "commandText": "dbo.WEB_CONTENT",
+        "connectionStringSetting": "AZURE_SQL_CONNECTION"
     }
   ]
 }
