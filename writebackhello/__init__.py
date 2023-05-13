@@ -21,7 +21,7 @@ def main(req: func.HttpRequest, connect_sql: func.Out[func.SqlRow]) -> func.Http
             name = req_body.get('name')
 
     content = run_inscriptis()
-    store_to_database(name, content)
+    ## store_to_database(name, content)
     
     if name:
         return func.HttpResponse(f"Hello {name}!", headers=headers)
